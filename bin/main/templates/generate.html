@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div>
+            <h1>How many numbers do you wish to generate?</h1>
+        </div>
+        <div>
+            <!-- void "#" the default form action and thymeleaf redirect data to "/rand/generate" -->
+            <form
+                action="#"
+                th:action="@{/rand/generate}"
+                th:object="${generateObj}"
+                method="POST"
+            >
+                <!-- ${} need object first while *{} can directly access the binded $object associated at the start of the form -->
+                <div>
+                    <input type="number" name="" id="" th:field="*{numVal}" />
+                    <button type="submit">Generate</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

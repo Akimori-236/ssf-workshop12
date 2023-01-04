@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Result</title>
+        <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    </head>
+    <body>
+        <div>
+            <h1>
+                Your list of <span th:text="${RandomNum}"></span> random numbers
+            </h1>
+            <ul class="row" th:each="numberImg: ${RandomResult}">
+                <!-- for each 'numberImg' in 'RandomResult' -->
+                <li class="col" th:text="${numberImg}"></li>
+                <!-- populate img filename -->
+                <img th:src="@{${'/images/' + numberImg}}" alt="" width="200" />
+            </ul>
+        </div>
+    </body>
+</html>
